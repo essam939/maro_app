@@ -1,6 +1,6 @@
 {
-    "name": "maroapp",
-    "short_name": "maroapp",
+    "name": "money_calc",
+    "short_name": "money_calc",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
