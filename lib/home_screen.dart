@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:money_calc/cubit/counter_cubit.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -69,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
+  final oCcy = NumberFormat("#,##0.00", "en_US");
   @override
   Widget build(BuildContext context) {
     final counterCubit = BlocProvider.of<CounterCubit>(context);
@@ -313,7 +315,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Total: \$${counterCubit.total}',
+                              'Total: ${oCcy.format(counterCubit.total)}',
                               style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
